@@ -22,7 +22,7 @@ public class EnemySpawnerScript : MonoBehaviour
         if (Time.time > nextSpawn) 
         {
             nextSpawn = Time.time + _spawnRate;
-            Instantiate (zombie, new Vector2(10,2), Quaternion.identity);
+            Instantiate (zombie,new Vector2(transform.position.x,transform.position.y),Quaternion.identity);
         }
     }
 }
