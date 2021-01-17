@@ -16,7 +16,7 @@ public class Zombie : MonoBehaviour
     void Update()
     {
         transform.Translate(-_speed * Time.deltaTime,0,0);
-        Destroy(gameObject, 7f);
+        Destroy(gameObject, 5f);
     }
 
     void OnCollisionEnter2D(Collision2D col) 

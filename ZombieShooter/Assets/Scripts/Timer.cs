@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
     
         if(endhealth.isDead){
             finished = true;
-            timerText.color = Color.yellow;
+            timerText.color = Color.red;
         }
 
     }
