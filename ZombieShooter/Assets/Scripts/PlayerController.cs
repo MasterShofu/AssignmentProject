@@ -22,24 +22,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //use spacebar to make our fish jump
-        //we are going to use local variable
-        //the button jump reresents the space key
+
         bool pressedJumpButton = Input.GetButtonDown("Jump");
-        
-        //if pressedJumpButton is true which means we are pressing space
-        //make fish jump
-        //if the pressedJumpButton = true
+
         if (transform.position.y < 0.9) 
         {
         if (pressedJumpButton)
         {
-            //find the rigidbody of the fish
             Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
-            //set the fish velocity to zero
             rigidbody.velocity = Vector3.zero;
-            //add force to our fish to make it jump
-            //Vector3(0,1,0) * force(1000)
             rigidbody.AddForce(Vector3.up * force);
         }
 
