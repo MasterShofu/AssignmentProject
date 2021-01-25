@@ -25,12 +25,14 @@ public class Zombie : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Player")){
             GameObject.Find("Player").GetComponent<Health>().health -= 1;;
+            SoundManager.PlaySound("Hit");
             Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
         if (col.gameObject.tag.Equals("Bullet")){
             Destroy(col.gameObject);
+            SoundManager.PlaySound("EnemyDeath");
             Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

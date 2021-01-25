@@ -17,11 +17,11 @@ public class EnemySpawnerScript : MonoBehaviour
     }
     void Update()
     {
-        float _spawnRate = Random.Range(1, 5);
+        float _zombiespawnRate = Random.Range(1, 5);
 
         if (Time.time > nextSpawn) 
         {
-            nextSpawn = Time.time + _spawnRate;
+            nextSpawn = Time.time + _zombiespawnRate;
             Instantiate (zombie,new Vector2(transform.position.x,transform.position.y),Quaternion.identity);
         }
     }
