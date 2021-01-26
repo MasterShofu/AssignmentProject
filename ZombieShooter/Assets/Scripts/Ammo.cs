@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Ammo : MonoBehaviour
 {  
     public Text ammoAmmount;
-    int currentAmmo;
-    public int startAmmo;
+    public int currentAmmo;
+    private int startAmmo;
+
+    public bool outOfAmmo = false;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class Ammo : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(Input.GetButtonDown("Fire1") && currentAmmo > 0)
+        if(Input.GetButtonDown("Fire1") && !outOfAmmo && (transform.position.y < 0.24))
         {
             currentAmmo--;
         }
@@ -27,6 +29,11 @@ public class Ammo : MonoBehaviour
         string viewAmmo = currentAmmo.ToString();
         string viewStartAmmo = startAmmo.ToString();
         ammoAmmount.text = ("Ammo:" + viewAmmo + "/" + viewStartAmmo);
+
+        if(currentAmmo == 0)
+        {
+            outOfAmmo = true;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -34,6 +41,7 @@ public class Ammo : MonoBehaviour
         if(other.tag == "Ammo")
         {
             currentAmmo = startAmmo;
+            outOfAmmo = false;
             Destroy(other.gameObject);
         }
     }

@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,20 +25,20 @@ public class PlayerController : MonoBehaviour
 
         bool pressedJumpButton = Input.GetButtonDown("Jump");
 
-        if (transform.position.y < 0.9) 
+        if (transform.position.y < 0.24) 
         {
-        if (pressedJumpButton)
-        {
-            Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.AddForce(Vector3.up * force);
-        }
+            if (pressedJumpButton)
+            {
+                Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+                rigidbody.velocity = Vector3.zero;
+                rigidbody.AddForce(Vector3.up * force);
+            }
 
-        if (Input.GetButtonDown ("Fire1") && Time.time > _nextFire)
-        {
-            _nextFire = Time.time + _fireRate;
-            fire ();
-        }
+            if (Input.GetButtonDown ("Fire1") && Time.time > _nextFire && (GetComponent<Ammo>().outOfAmmo == false))
+            {
+                _nextFire = Time.time + _fireRate;
+                fire ();
+            }
         }
     }
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         bulletPos = transform.position;
         if (facingRight)
         {
-            bulletPos += new Vector2 (+1.4f, 0.65f);
+            bulletPos += new Vector2 (+1.4f, 0.45f);
             Instantiate (Bullet, bulletPos, Quaternion.identity);
         }
     }

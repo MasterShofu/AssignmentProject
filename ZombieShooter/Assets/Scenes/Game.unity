@@ -250,8 +250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73174420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 0.44, z: 0}
-  m_LocalScale: {x: 0.40601447, y: 0.40601447, z: 0.40601447}
+  m_LocalPosition: {x: -6.92, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -414,7 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmmount: {fileID: 1493888520}
-  startAmmo: 17
+  currentAmmo: 0
+  outOfAmmo: 0
 --- !u!1 &75743027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,7 +1680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984226537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -0, z: 4.3535156}
+  m_LocalPosition: {x: 10, y: -0.29, z: 4.3535156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
